@@ -1,0 +1,100 @@
+@import "../bourbon/bourbon"
+
+$color: #FF6347 //Theme skin
+$text_color: #888
+$main_color: #222
+$bg_light: #FAFAFA
+
+@mixin kerning($kerning)
+	letter-spacing: $kerning + px
+
+body
+	color: $main_color
+	+kerning(1)
+
+a
+	color: $color
+
+p,
+body .main_footer,
+.s_about li
+	color: $text_color
+
+.main_footer
+	+kerning(.2)
+
+.color_element
+	color: $color
+.color_bg
+	background-color: $color
+.color_border
+	border-color: $color
+
+.bg_white
+	background-color: #FFF
+
+.bg_light
+	background-color: $bg_light
+
+.bg_dark
+	background-color: $main_color
+	color: #fff
+	.s_discr::after
+		background-color: #fff
+
+svg
+	path
+		fill: $text_color
+
+.top_menu
+	a:hover
+		color: $color
+		background-color: rgba(255,255,255,.1)
+	a
+		+kerning(3)
+
+.top_text
+	p
+		color: $bg_light
+		+kerning(5)
+
+.s_discr
+	+kerning(5)
+	&::after
+		background-color: $main_color
+
+section
+	h3
+		+kerning(3)
+		color: $text_color
+	.personal_head
+		+kerning(2)
+
+.s_about
+	p
+		&:nth-child(even)
+			color: $color
+
+.resume_container
+	h3
+		color: $main_color
+		+kerning(1)
+
+.resume_item
+	.year
+		background-color: $color
+	.resume_dicr
+		+kerning(1)
+
+.s_portfolio
+	li
+		+kerning(2)
+		color: $text_color
+		&.active
+			color: #fff
+			border-bottom: 1px solid $color
+
+.port_item_cont
+	button
+		border-color: $color
+		color: $color
